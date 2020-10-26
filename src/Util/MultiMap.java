@@ -3,7 +3,7 @@ package Util;
 
 import java.util.*;
 
-class MultiMap<T, K>
+public class MultiMap<T, K>
 {
     private Map<T, Collection<K>> map = new HashMap<>();
  
@@ -95,12 +95,14 @@ class MultiMap<T, K>
     }
     
     /**
-    * Removes the entry for the specified
-    * @return If the remove was a success
+    * Removes the entry for the specified key-value input
+    * @param key the value to removed, if present
+    * @param value the value to removed, if present
+    * @return if the remove was a success or not
     */
     public boolean remove(T key, K value) {
-        if (map.get(key) != null)
-            return map.get(key).remove(value); 
+        if (get(key) != null)
+            return get(key).remove(value); 
         return false;
     }
  
