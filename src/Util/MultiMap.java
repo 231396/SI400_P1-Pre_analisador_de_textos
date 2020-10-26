@@ -8,29 +8,34 @@ class MultiMap<T, K>
     private Map<T, Collection<K>> map = new HashMap<>();
  
     /**
-    * Returns a Collection which the specified key is mapped or null if don't exist.
+    * @param key the key whose associated value is to be returned
+    * @return Collection of values of given key or null if don't exist
     */
     public Collection<K> get(T key) {
         return map.get(key);
     }
     
     /**
-    * Returns a Collection view of Collection of the values present in this multimap.
+    * @param key the key whose associated value is to be returned
+    * @return Collection of values of given key or null if don't exist
     */
-    public Collection<Collection<K>> values() {
-        return map.values();
+    public Collection<T> getKeys() {
+        return map.keySet();
     }
  
     /**
     * Add only the key (The key can't exist) to the multimap
+    * @param key the new key
     */
     public void add(T key) {
-        if (map.get(key) == null)
+        if (get(key) == null)
             map.put(key, new ArrayList<>());
     }
     
     /**
     * Add new a key with value, if the key already exist, only the value will be add
+    * @param key key with which the specified value is to be associated
+    * @param value value to be associated with the specified key
     */
     public void add(T key, K value) {
     	add(key); 
@@ -39,13 +44,16 @@ class MultiMap<T, K>
  
     /**
     * Returns true if this multimap contains a given key.
+    * @param key key to verify if exist on multimap
+    * @return if the given key exist or not in the multimap
     */
     public boolean containsKey(T key) {
         return map.containsKey(key);
     } 
  
     /**
-    * Returns the number of keys in the multimap.
+    * Get the number of keys existing in the multimap.
+    * @return the number of keys.
     */
     public int keySize() {
         return map.size();
@@ -53,7 +61,9 @@ class MultiMap<T, K>
 
     
     /**
-    * Returns the number of values in a specified key multimap.
+    * Get the number of values existing in specified key in the multimap.
+    * @param key the key whose associated numbers of values is to be returned
+    * @return the number of values in a given key.
     */
     public int valueSize(T key) {
         return get(key).size();
@@ -61,6 +71,7 @@ class MultiMap<T, K>
  
     /**
     * Returns true if this multimap contains no key-value mappings.
+    * @return true if this multimap contains no key-value mappings
     */
     public boolean isEmpty() {
         return map.isEmpty();
@@ -77,6 +88,7 @@ class MultiMap<T, K>
     * Removes the mapping for the specified key from this multimap if present
     * and returns the Collection of previous values associated with key, or
     * null if there was no mapping for key.
+    * 
     */
     public Collection<K> remove(T key) {
         return map.remove(key);
