@@ -2,6 +2,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/eclipse,java,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=eclipse,java,visualstudiocode
 
+*.csv
+
 ### Eclipse ###
 .metadata
 bin/

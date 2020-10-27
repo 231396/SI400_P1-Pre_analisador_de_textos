@@ -1,5 +1,5 @@
 
-package Util;
+package util;
 
 import java.util.*;
 
@@ -48,8 +48,9 @@ public class MultiMap<T, K>
     * @param value value to be associated with the specified key
     */
     public void add(T key, K value) {
-    	add(key); 
-        get(key).add(value);
+    	add(key);
+    	if (!containsKeyValue(key, value))
+    		get(key).add(value);
     }
  
     /**
@@ -60,6 +61,17 @@ public class MultiMap<T, K>
     public boolean containsKey(T key) {
         return map.containsKey(key);
     } 
+    
+    /**
+    * Returns true if this multimap contains a given value in a key.
+    * @param key key to get the value
+    * @param value value to verify if exist in the key collection
+    * @return if the given value exist or not in the multimap
+    */
+    public boolean containsKeyValue(T key, K value) {
+        return get(key).contains(value);
+    } 
+ 
  
     /**
     * Get the number of keys existing in the multimap.
