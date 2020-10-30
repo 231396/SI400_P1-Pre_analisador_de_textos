@@ -1,5 +1,9 @@
 package basePackage;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
 import util.MultiMap;
 
 /**
@@ -15,6 +19,28 @@ public class DigraphMaker {
 			mm.add(words[i], words[i+1]);
 		}
 		return mm;
+	}
+	
+	public String diagraphToString(MultiMap<String, String> mm) {
+		/*Get the keys from the multimap */
+		ArrayList<String> keys = new ArrayList<>();
+		keys.addAll(mm.getKeys());
+
+		/*Order the list*/
+		Collections.sort(keys);
+		
+	    StringBuilder sb = new StringBuilder();
+	    /*Loop the vetor that is ordered and write int the file the keys and values of the multimap*/
+	    for(String key : keys) {
+	    	sb.append(key);
+    		Collection<String> values = mm.get(key);
+	    	for(String value : values) {
+	    		sb.append(',' + value);
+	    	}
+	    	sb.append('\n');
+	    }
+	    
+	    return sb.toString();
 	}
 	
 }
