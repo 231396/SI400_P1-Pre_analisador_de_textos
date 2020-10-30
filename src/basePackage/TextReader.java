@@ -6,9 +6,16 @@ import java.io.IOException;
 
 public  class TextReader {
 
+	/**
+	 * Read a text file in a given path and return the content
+	 * @param path path leading to the file
+	 * @return String containing all the text of the text file
+	 * @throws IOException fails to read the text or path not found
+	 */
 	public static String reader(String path) throws IOException {
 		StringBuilder sb = new StringBuilder();
-		BufferedReader buffRead = new BufferedReader(new FileReader(path));
+		FileReader fr = new FileReader(path); 
+		BufferedReader buffRead = new BufferedReader(fr);
 		String line = "";
 		while (line != null) {		
 			sb.append(line);
@@ -18,7 +25,11 @@ public  class TextReader {
 		return sb.toString();
 	}
 
-	
+	/**
+	 * Treat a given string, exchanging lines for spaces, convert them to lowercase and remove punctuation.
+	 * @param str string with the text to treat
+	 * @return treated string
+	 */
 	public String treatText(String str) {		
 		str = str.replaceAll("\n", " ")
 				.replaceAll("\r", "")
@@ -27,6 +38,11 @@ public  class TextReader {
 		return str;
 	}
 	
+	/**
+	 * Transforms text into an array, separated by one or more spaces characters.
+	 * @param str the string that will be separated
+	 * @return String array containing each word that was separated
+	 */
 	public String[] stringToWords(String str) {
 		return str.split(" +");
 	}

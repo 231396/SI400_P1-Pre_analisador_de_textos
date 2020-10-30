@@ -6,11 +6,11 @@ import java.io.IOException;
 public class TextWriter {
 
 	/**
-	 * Write a given text in a file with
-	 * @param fileName
-	 * @param fileExtension
-	 * @param fileText
-	 * @throws IOException
+	 * Create a text file of a given name and extension, after that it will write a given text int that file.
+	 * @param fileName name of the file
+	 * @param fileExtension extension of the file
+	 * @param fileText text that will be write on the file
+	 * @throws IOException fail to write to the file
 	 */
 	public void WriteFile(String fileName, String fileExtension, String fileText) throws IOException {
 		
