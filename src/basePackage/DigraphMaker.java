@@ -12,9 +12,10 @@ import util.MultiMap;
 public class DigraphMaker {
 
 	
-	public MultiMap<String, String> made(String[] words) {
+	public MultiMap<String, String> madeDiagraph(String[] words) {
 		MultiMap<String, String> mm = new MultiMap<>();
 
+		/*Add key-value to the multimap */
 		for (int i = 0; i < words.length-1; i++) {
 			mm.add(words[i], words[i+1]);
 		}

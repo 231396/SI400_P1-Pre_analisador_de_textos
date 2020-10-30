@@ -16,11 +16,16 @@ public  class TextReader {
 		StringBuilder sb = new StringBuilder();
 		FileReader fr = new FileReader(path); 
 		BufferedReader buffRead = new BufferedReader(fr);
+		
+		/*Read Text File*/
 		String line = "";
 		while (line != null) {		
 			sb.append(line);
 			line = buffRead.readLine();
 		}		
+		
+		/*Close File*/
+		fr.close();
 		buffRead.close();
 		return sb.toString();
 	}
@@ -31,11 +36,10 @@ public  class TextReader {
 	 * @return treated string
 	 */
 	public String treatText(String str) {		
-		str = str.replaceAll("\n", " ")
+		return str.replaceAll("\n", " ")
 				.replaceAll("\r", "")
 				.replaceAll("[\\.\\!\\?\\,\\(\\)\\$\\[\\]\\:\\;\\\"\\*\\/\\\\\\–\\–\\@]", "")
 				.toLowerCase();
-		return str;
 	}
 	
 	/**

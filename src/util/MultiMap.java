@@ -107,9 +107,8 @@ public class MultiMap<T, K>
     }
     
     /**
-    * Removes the mapping for the specified key from this multimap if present
-    * and returns the Collection of previous values associated with key, or
-    * null if there was no mapping for key.
+    * Removes the mapping for the specified key if exists and returns 
+    * the Collection of it values or null if there was no mapping for key.
     * @param key key whose mapping is to be removed from the map
     * @return the previous value associated with key, or null if there was no mapping for key.
     */
