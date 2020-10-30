@@ -12,7 +12,7 @@ public  class TextReader {
 	 * @return String containing all the text of the text file
 	 * @throws IOException fails to read the text or path not found
 	 */
-	public static String reader(String path) throws IOException {
+	public String reader(String path) throws IOException {
 		StringBuilder sb = new StringBuilder();
 		FileReader fr = new FileReader(path); 
 		BufferedReader buffRead = new BufferedReader(fr);
