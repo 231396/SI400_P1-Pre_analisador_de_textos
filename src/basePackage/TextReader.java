@@ -35,7 +35,6 @@ public class TextReader {
 		}		
 		
 		/*Close File*/
-//		fr.close();
 		buffRead.close();
 		return sb.toString();
 	}
@@ -49,7 +48,7 @@ public class TextReader {
 		return str.replaceAll("\n", " ")
 				.replaceAll("\r", "")
 				.toLowerCase()
-				.replaceAll("[^a-zαΰβγιθκνστυϊη-\\d ]", "");
+				.replaceAll("[^a-zαΰβγιθκνστυϊη\\-\\d ]", "");
 	}
 	
 	/**
