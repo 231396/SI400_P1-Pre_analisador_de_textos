@@ -51,7 +51,7 @@ public class TextReader {
 	public String treatText(String str) {		
 		return str.replaceAll("\n", " ")
 				.replaceAll("\r", "")
-				.replaceAll("[\\\\\\/\\.\\!\\?\\,\\(\\)\\$\\[\\]\\:\\;\\ï¿½\\ï¿½\\\"\\'\\*\\ï¿½\\ï¿½\\@]", "")
+				.replaceAll("[\\\\\\/\\.\\!\\?\\,\\(\\)\\$\\[\\]\\:\\;\\“\\”\\\"\\'\\*\\–\\–\\@]", "")
 				.toLowerCase();
 	}
 	
