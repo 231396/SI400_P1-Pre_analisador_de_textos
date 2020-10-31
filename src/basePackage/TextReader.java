@@ -4,7 +4,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public  class TextReader {
+/**
+ * This class has the responsibility to perform all the program input
+ * must treat all text to suit the needs of the program
+ */
+public class TextReader {
 
 	/**
 	 * Read a text file in a given path and return the content
