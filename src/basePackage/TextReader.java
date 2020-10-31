@@ -61,15 +61,6 @@ public class TextReader {
 	 */
 	public String[] stringToWords(String str) {
 		return str.split(" +");
-		/*
-		String[] words = str.split(" +");
-		ArrayList<String> listWords = new ArrayList<>();
-		for (int i = 0; i < words.length; i++) {
-			if (words[i] != null && !words[i].isEmpty())
-				listWords.add(words[i]);
-		}
-		return (String[]) listWords.toArray();
-		*/
 	}
 	
 }
