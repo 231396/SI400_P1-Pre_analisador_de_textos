@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class has the responsibility to perform all the program input
@@ -57,7 +59,13 @@ public class TextReader {
 	 * @return String array containing each word that was separated
 	 */
 	public String[] stringToWords(String str) {
-		return str.split(" +");
+		String[] words = str.split(" +");
+		ArrayList<String> listWords = new ArrayList<>();
+		for (int i = 0; i < words.length; i++) {
+			if (words[i] != null && !words[i].isEmpty())
+				listWords.add(words[i]);
+		}
+		return (String[]) listWords.toArray();
 	}
 	
 }
