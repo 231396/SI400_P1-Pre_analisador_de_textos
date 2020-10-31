@@ -2,6 +2,8 @@
 
 import java.io.IOException;
 
+import util.MultiMap;
+
 public class Main 
 {
 	/**
@@ -10,20 +12,20 @@ public class Main
 	 */
 	public static void main(String[] args) 
 	{
+		
 		Controller control = new Controller(); 
-		
-		control.readText();
-		control.writeText();
-		control.readText();
-		
-		TextReader tr = new TextReader();
-		String str = "Eu como maça 21 Eu como maça 21";
-		DigraphMaker dm = new DigraphMaker();
-		TextWriter tw = new TextWriter(dm.made(tr.stringToWords(tr.treatText(str))));
-		try { 
-			System.out.println(tw.Write("Arquivo"));
-		} 
-		catch(IOException e){}
-		//System.out.println(try { tw.Write("Arquivo") } catch{});
+				
+		for(String fileName : args) {
+			System.out.println("Filename : "+fileName);
+			try {
+				String[] worlds = control.readText(fileName);
+				MultiMap<String, String> multimap = control.MakeDigraph(worlds);
+				control.writeText(multimap,fileName);
+			} catch (IOException e2) {
+				System.out.println("Program finished with error: "+e2.getMessage());
+			}
+		}
+
+		System.out.println("End");
 	}		
 }

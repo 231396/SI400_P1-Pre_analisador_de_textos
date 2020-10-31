@@ -19,9 +19,13 @@ public  class TextReader {
 		
 		/*Read Text File*/
 		String line = "";
-		while (line != null) {		
+		while (true) {		
 			sb.append(line);
 			line = buffRead.readLine();
+			if(line != null)
+				line += "\n";
+			else
+				break;
 		}		
 		
 		/*Close File*/
