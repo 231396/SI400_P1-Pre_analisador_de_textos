@@ -12,7 +12,7 @@ public class TextWriter {
 	 * @param fileText text that will be write on the file
 	 * @throws IOException fail to write to the file
 	 */
-	public void WriteFile(String fileName, String fileExtension, String fileText) throws IOException {
+	public void writeFile(String fileName, String fileExtension, String fileText) throws IOException {
 		
 		/*Create a PrintWriter to write in the file*/
 		FileWriter fileWriter = new FileWriter(fileName+fileExtension);	

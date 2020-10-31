@@ -19,8 +19,8 @@ public class Main
 			System.out.println("Filename : "+fileName);
 			try {
 				String[] worlds = control.readText(fileName);
-				MultiMap<String, String> multimap = control.MakeDigraph(worlds);
-				control.writeText(multimap,fileName);
+				String fileText = control.MakeDigraph(worlds);
+				control.writeText(fileName,".csv",fileText);
 			} catch (IOException e2) {
 				System.out.println("Program finished with error: "+e2.getMessage());
 			}

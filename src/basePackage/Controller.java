@@ -17,14 +17,15 @@ public class Controller {
 		return tr.stringToWords(tr.treatText(str));
 	}
 	
-	public MultiMap<String, String> MakeDigraph(String[] worlds) {
+	public String MakeDigraph(String[] worlds) {
 		DigraphMaker dm = new DigraphMaker();
-		return dm.made(worlds);
+		MultiMap<String, String> mm =  dm.madeDiagraph(worlds);
+		return dm.diagraphToString(mm, ',');
 	}
 	
-	public void writeText(MultiMap<String, String> multimap, String fileName) throws IOException {
-		TextWriter tw = new TextWriter(multimap);
-		tw.Write(fileName);
+	public void writeText(String fileName, String fileExtension, String fileText) throws IOException {
+		TextWriter tw = new TextWriter();
+		tw.writeFile(fileName,fileExtension,fileText);
 	}
 	
 	
