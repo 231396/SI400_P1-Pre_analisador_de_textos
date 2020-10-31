@@ -34,9 +34,9 @@ public class Controller {
 	}
 	
 	/**
-	 * 
+	 * Generate a new diagraph using a multimap and given array of words
 	 * @param words
-	 * @return
+	 * @return the text 
 	 */
 	public String generateDiagraph(String[] words) {
 		MultiMap<String, String> mm = dm.makeDiagraph(words);
