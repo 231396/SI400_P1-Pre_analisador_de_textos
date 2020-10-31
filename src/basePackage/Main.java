@@ -16,8 +16,9 @@ public class Main
 		for(String fileName : args) {
 			System.out.println("Filename : "+fileName);
 			try {
-				String[] words = control.readText(fileName);
-				String fileText = control.createDiagraph(words);
+				String text = control.readText(fileName);
+				String[] words = control.treatAndSplitText(text);
+				String fileText = control.generateDiagraph(words);
 				control.writeText(fileName,".csv",fileText);
 			} catch (IOException e2) {
 				System.out.println("Program finished with error: "+e2.getMessage());

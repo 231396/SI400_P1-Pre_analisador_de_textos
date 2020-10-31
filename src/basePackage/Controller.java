@@ -13,19 +13,43 @@ public class Controller {
 	private TextReader tr = new TextReader();
 	private DiagraphMaker dm = new DiagraphMaker();
 	
+	/**
+	 * Read a given fileName and return it content
+	 * @param fileName name of the file of will be read
+	 * @return the text read from the file
+	 * @throws IOException fails to read the file
+	 */
+	public String readText(String fileName) throws IOException {
+		return tr.reader(fileName);
+	}
 	
-	public String[] readText(String fileName) throws IOException {
-		//TextReader tr = new TextReader();		
-		String str = tr.reader(fileName);
-		String treatedStr = tr.treatText(str);
+	/**
+	 * 
+	 * @param text
+	 * @return
+	 */
+	public String[] treatAndSplitText(String text){
+		String treatedStr = tr.treatText(text);
 		return tr.stringToWords(treatedStr);
 	}
 	
-	public String createDiagraph(String[] words) {
-		MultiMap<String, String> mm =  dm.makeDiagraph(words);
+	/**
+	 * 
+	 * @param words
+	 * @return
+	 */
+	public String generateDiagraph(String[] words) {
+		MultiMap<String, String> mm = dm.makeDiagraph(words);
 		return dm.diagraphToString(mm, ',');
 	}
 	
+	/**
+	 * Create a new file with a given name and write a given text
+	 * @param fileName the name of the file that will be generated
+	 * @param fileExtension the type of extension the file will have Ex: .txt or .csv
+	 * @param fileText the text to be write in the file
+	 * @throws IOException
+	 */
 	public void writeText(String fileName, String fileExtension, String fileText) throws IOException {
 		tw.writeFile(fileName,fileExtension,fileText);
 	}
