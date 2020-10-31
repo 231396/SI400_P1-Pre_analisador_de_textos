@@ -7,7 +7,7 @@ import java.util.Collections;
 import util.MultiMap;
 
 /**
- * Class to be used to make diagraph
+ * Class to be used to use and make diagraph
  */
 public class DiagraphMaker {
 

@@ -3,6 +3,9 @@ package basePackage;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * This class has the responsibility to perform all the program output
+ */
 public class TextWriter {
 
 	/**

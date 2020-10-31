@@ -8,7 +8,11 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public  class TextReader {
+/**
+ * This class has the responsibility to perform all the program input
+ * must treat all text to suit the needs of the program
+ */
+public class TextReader {
 
 	/**
 	 * Read a text file in a given path and return the content
