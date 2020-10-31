@@ -9,8 +9,7 @@ public class Main
 	 * @param args arguments passed from console
 	 */
 	public static void main(String[] args) 
-	{
-		
+	{		
 		Controller control = new Controller(); 
 				
 		for(String fileName : args) {

@@ -48,8 +48,8 @@ public class TextReader {
 	public String treatText(String str) {		
 		return str.replaceAll("\n", " ")
 				.replaceAll("\r", "")
-				.replaceAll("[^A-Za-záàâãéèêíóôõúçÁÀÂÃÉÈÍÓÔÕÚÇ-\\d ]", "")
-				.toLowerCase();
+				.toLowerCase()
+				.replaceAll("[^a-záàâãéèêíóôõúç-\\d ]", "");
 	}
 	
 	/**
