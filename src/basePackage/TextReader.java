@@ -1,8 +1,12 @@
 package basePackage;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public  class TextReader {
 
@@ -14,8 +18,9 @@ public  class TextReader {
 	 */
 	public String reader(String fileName) throws IOException {
 		StringBuilder sb = new StringBuilder();
-		FileReader fr = new FileReader(fileName); 
-		BufferedReader buffRead = new BufferedReader(fr);
+//		FileReader fr = new FileReader(fileName,StandardCharsets.UTF_8);
+		File file = new File(fileName);
+		BufferedReader buffRead = Files.newBufferedReader(file.toPath(), Charset.forName("UTF-8"));
 		
 		/*Read Text File*/
 		String line = "";
@@ -29,7 +34,7 @@ public  class TextReader {
 		}		
 		
 		/*Close File*/
-		fr.close();
+//		fr.close();
 		buffRead.close();
 		return sb.toString();
 	}
@@ -42,7 +47,7 @@ public  class TextReader {
 	public String treatText(String str) {		
 		return str.replaceAll("\n", " ")
 				.replaceAll("\r", "")
-				.replaceAll("[\\.\\!\\?\\,\\(\\)\\$\\[\\]\\:\\;\\“\\”\\\"\\*\\/\\\\\\–\\–\\@]", "")
+				.replaceAll("[\\.\\!\\?\\,\\(\\)\\$\\[\\]\\:\\;\\ï¿½\\ï¿½\\\"\\*\\/\\\\\\ï¿½\\ï¿½\\@]", "")
 				.toLowerCase();
 	}
 	

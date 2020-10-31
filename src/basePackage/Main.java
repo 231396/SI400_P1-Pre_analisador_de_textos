@@ -17,6 +17,7 @@ public class Main
 			System.out.println("Filename : "+fileName);
 			try {
 				String text = control.readText(fileName);
+				System.out.println(text);
 				String[] words = control.treatAndSplitText(text);
 				String fileText = control.generateDiagraph(words);
 				control.writeText(fileName,".csv",fileText);
