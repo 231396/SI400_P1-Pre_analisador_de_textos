@@ -50,7 +50,8 @@ public class TextReader {
 		return str.replaceAll("\n", " ")
 				.replaceAll("\r", "")
 				.toLowerCase()
-				.replaceAll("[^a-záàâãéèêíóôõúç\\-\\d ]", "");
+				.replaceAll("[^a-záàâãéèêíóôõúç\\-\\d ]", "")
+				.trim();
 	}
 	
 	/**
@@ -59,6 +60,8 @@ public class TextReader {
 	 * @return String array containing each word that was separated
 	 */
 	public String[] stringToWords(String str) {
+		return str.split(" +");
+		/*
 		String[] words = str.split(" +");
 		ArrayList<String> listWords = new ArrayList<>();
 		for (int i = 0; i < words.length; i++) {
@@ -66,6 +69,7 @@ public class TextReader {
 				listWords.add(words[i]);
 		}
 		return (String[]) listWords.toArray();
+		*/
 	}
 	
 }
