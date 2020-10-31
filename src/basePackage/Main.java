@@ -11,12 +11,12 @@ public class Main
 	public static void main(String[] args) 
 	{		
 		Controller control = new Controller(); 
-				
+
+		System.out.println("Start");
 		for(String fileName : args) {
-			System.out.println("Filename : "+fileName);
+			System.out.println("Working in :"+fileName);
 			try {
-				String text = control.readText(fileName);
-				System.out.println(text);
+				String text = control.readText(fileName);;
 				String[] words = control.treatAndSplitText(text);
 				String fileText = control.generateDiagraph(words);
 				control.writeText(fileName,".csv",fileText);
