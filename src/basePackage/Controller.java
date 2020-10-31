@@ -9,22 +9,24 @@ import util.MultiMap;
  */
 public class Controller {
 	
+	private TextWriter tw = new TextWriter();
+	private TextReader tr = new TextReader();
+	private DiagraphMaker dm = new DiagraphMaker();
+	
+	
 	public String[] readText(String fileName) throws IOException {
-		//TextReader tr = new TextReader();
-		
-		TextReader tr = new TextReader();
+		//TextReader tr = new TextReader();		
 		String str = tr.reader(fileName);
-		return tr.stringToWords(tr.treatText(str));
+		String treatedStr = tr.treatText(str);
+		return tr.stringToWords(treatedStr);
 	}
 	
-	public String MakeDigraph(String[] worlds) {
-		DigraphMaker dm = new DigraphMaker();
-		MultiMap<String, String> mm =  dm.madeDiagraph(worlds);
+	public String createDiagraph(String[] words) {
+		MultiMap<String, String> mm =  dm.makeDiagraph(words);
 		return dm.diagraphToString(mm, ',');
 	}
 	
 	public void writeText(String fileName, String fileExtension, String fileText) throws IOException {
-		TextWriter tw = new TextWriter();
 		tw.writeFile(fileName,fileExtension,fileText);
 	}
 	

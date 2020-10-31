@@ -9,14 +9,14 @@ import util.MultiMap;
 /**
  * Class to be used to make diagraph
  */
-public class DigraphMaker {
+public class DiagraphMaker {
 
 	/**
 	 * Transform a array of words in a diagraph multimap.
 	 * @param words string array of words already treated
 	 * @return a multimap in a diagraph format, made of the given string array.
 	 */
-	public MultiMap<String, String> madeDiagraph(String[] words) {
+	public MultiMap<String, String> makeDiagraph(String[] words) {
 		MultiMap<String, String> mm = new MultiMap<>();
 
 		/*Add key-value to the multimap */

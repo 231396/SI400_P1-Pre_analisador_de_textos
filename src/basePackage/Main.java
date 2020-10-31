@@ -2,8 +2,6 @@
 
 import java.io.IOException;
 
-import util.MultiMap;
-
 public class Main 
 {
 	/**
@@ -18,8 +16,8 @@ public class Main
 		for(String fileName : args) {
 			System.out.println("Filename : "+fileName);
 			try {
-				String[] worlds = control.readText(fileName);
-				String fileText = control.MakeDigraph(worlds);
+				String[] words = control.readText(fileName);
+				String fileText = control.createDiagraph(words);
 				control.writeText(fileName,".csv",fileText);
 			} catch (IOException e2) {
 				System.out.println("Program finished with error: "+e2.getMessage());
