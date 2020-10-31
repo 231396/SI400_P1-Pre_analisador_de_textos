@@ -14,7 +14,7 @@ public class Main
 
 		System.out.println("Start");
 		for(String fileName : args) {
-			System.out.println("Working in :"+fileName);
+			System.out.println("Working in "+fileName);
 			try {
 				String text = control.readText(fileName);;
 				String[] words = control.treatAndSplitText(text);
