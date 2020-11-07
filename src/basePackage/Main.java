@@ -1,4 +1,4 @@
-﻿package basePackage;
+package basePackage;
 
 import java.io.IOException;
 

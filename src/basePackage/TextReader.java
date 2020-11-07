@@ -14,7 +14,7 @@ public class TextReader {
 
 	/**
 	 * Read a text file in a given path and return the content
-	 * @param path path leading to the file
+	 * @param fileName path leading to the file
 	 * @return String containing all the text of the text file
 	 * @throws IOException fails to read the text or path not found
 	 */
@@ -48,7 +48,7 @@ public class TextReader {
 		return str.replaceAll("\n", " ")
 				.replaceAll("\r", "")
 				.toLowerCase()
-				.replaceAll("[^a-záàâãéèêíóôõúç\\-\\d ]", "")
+				.replaceAll("[^a-zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\\-\\d ]", "")
 				.trim();
 	}
 	
