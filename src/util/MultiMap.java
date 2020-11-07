@@ -134,6 +134,7 @@ public class MultiMap<T, K>
     * @param key the key that contains the values
     * @param oldValue the value to be removed
     * @param newValue the value to be add on where oldValue was
+    * @return if the replace was a success or not
     */
     public boolean replace(T key, K oldValue, K newValue) { 
         if (get(key) != null) {
