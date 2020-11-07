@@ -48,7 +48,7 @@ public class TextReader {
 		return str.replaceAll("\n", " ")
 				.replaceAll("\r", "")
 				.toLowerCase()
-				.replaceAll("[^a-zпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ\\-\\d ]", "")
+				.replaceAll("[^a-zбавгйикнуфхъз\\-\\d ]", "")
 				.trim();
 	}
 	
